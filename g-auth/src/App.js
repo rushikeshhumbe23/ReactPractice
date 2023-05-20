@@ -2,18 +2,24 @@ import "./App.css";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import styled from "styled-components";
 function App() {
-  const { user, isAuthenticated} = useAuth0();
-  console.log(user);
+  const { user, isAuthenticated } = useAuth0();
+  const { name, lacale, nickname, picture } = user;
   return (
     <div className="App">
-      {isAuthenticated ? `${user.nickname}` : "Plese Login"}
-      <h1>Rushikes Humbe</h1>
-
-      <LogoutButton />
-      <LoginButton />
+      <div>
+        {/* <img src={`${picture}`} /> */}
+        <div>{isAuthenticated ? `${user.nickname}` : ""}</div>
+        {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+      </div>
     </div>
   );
 }
 
 export default App;
+
+const DIV = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
