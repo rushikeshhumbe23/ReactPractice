@@ -10,7 +10,16 @@ function App() {
     <div className="App">
       <div>
         {/* <img src={`${picture}`} /> */}
-        <div>{isAuthenticated ? `${user.nickname}` : ""}</div>
+        <div
+          style={{
+            padding: "5px",
+            backgroundColor: "black",
+            color: "white",
+            fontWeight: "500",
+          }}
+        >
+          {isAuthenticated ? `${user.nickname}` : ""}
+        </div>
         {isAuthenticated ? <LogoutButton /> : <LoginButton />}
       </div>
     </div>
