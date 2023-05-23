@@ -1,11 +1,11 @@
 import React from "react";
-import LoginButton from "./components/LoginButton";
-import LogoutButton from "./components/LogoutButton";
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
-import styled from "styled-components";
+
 function Navbar() {
   const { user, isAuthenticated } = useAuth0();
-  const { name, lacale, nickname, picture } = user;
+  //   const { name, lacale, nickname, picture } = user;
   return (
     <div>
       <div>
