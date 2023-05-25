@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar() {
   const { user, isAuthenticated } = useAuth0();
-  //   const { name, lacale, nickname, picture } = user;
+
   return (
     <div>
       <div>
@@ -16,6 +16,7 @@ function Navbar() {
             backgroundColor: "black",
             color: "white",
             fontWeight: "500",
+            border: "1px solid gray",
           }}
         >
           {isAuthenticated ? `${user.nickname}` : ""}
